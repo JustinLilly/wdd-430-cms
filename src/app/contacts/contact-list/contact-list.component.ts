@@ -1,23 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Contact } from "../contact.model";
+
 @Component({
   selector: 'cms-contact-list',
   templateUrl: './contact-list.component.html',
   styleUrls: ['./contact-list.component.scss']
 })
 export class ContactListComponent implements OnInit {
-  firstName: string;
-  lastName: string;
-  iNumber: string;
-  major: string;
+  contacts: Contact[] = [
+    new Contact('1', 'R. Kent Jackson', 'jacksonk@byui.edu', '208-496-3771', '../../assets/images/jacksonk.jpg', null),
+    new Contact('2', 'Rex Barzee', 'barzeer@byui.edu', '208-496-3768', '../../assets/images/barzeer.jpg', null)
+  ];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-    this.firstName = 'Tim';
-    this.lastName = 'Thayne';
-    this.iNumber = '999999999';
-    this.major = 'CIT';
+    
   }
 
 }
